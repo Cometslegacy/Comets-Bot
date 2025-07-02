@@ -13,7 +13,8 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f'We have logged in as {bot.user} and are now online!')
+        print(f"Using py-cord version: {discord.__version__}")
+        print(f'We have logged in as {bot.user} and are now online!')
 
 # Load cogs
 @bot.event
@@ -21,5 +22,6 @@ async def setup_hook():
     for filename in os.listdir("./cogs"):
         if filename.endswith(".py") and not filename.startswith("_"):
             await bot.load_extension(f"cogs.{filename[:-3]}")
+            #print(f"{filename[:-3]} loaded")
             
 bot.run(TOKEN)
