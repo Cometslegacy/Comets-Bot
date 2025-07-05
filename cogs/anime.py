@@ -8,7 +8,7 @@ class Anime(commands.Cog):
 
     @commands.command(name="anime")
     async def anime(self, ctx, *, tags=""):
-        tags+=" rating:safe score:>150"
+        tags+=" rating:g,s score:>25"
         
         # Format the random endpoint with the given tags
         url = f"https://danbooru.donmai.us/posts/random.json?tags={tags}"
